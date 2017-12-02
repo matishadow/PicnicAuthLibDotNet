@@ -18,7 +18,7 @@ namespace PicnicAuthNetClient.Classes.Endpoints
             return RestClient.Execute<OneTimePassword>(request);
         }
 
-        public IRestResponse<OtpValidationResult> ValidatetotpForAuthUser(Guid userId, string totp)
+        public IRestResponse<OtpValidationResult> ValidateTotpForAuthUser(Guid userId, string totp)
         {
             var request = new RestRequest($"AuthUsers/{userId}/totp/{totp}", Method.GET);
             AddAuthorizationHeader(request, ApiKey);

@@ -42,5 +42,50 @@ namespace PicnicAuthNetClient.Classes
 
             return response;
         }
+
+        public IRestResponse<AuthUsersInCompany> GetAuthUsers(int page = 1, int pageCount = 10)
+        {
+            return authUsersEndpoint.GetAuthUsersForLoggedCompany(page, pageCount);
+        }
+
+        public IRestResponse<CreatedAuthUser> AddAuthUser(AddAuthUserArgument addAuthUserArgument)
+        {
+            return authUsersEndpoint.AddAuthUser(addAuthUserArgument);
+        }
+
+        public IRestResponse<CreatedAuthUser> GenereteNewSecret(Guid userId)
+        {
+            return authUsersSecretsEndpoint.GenereteNewSecret(userId);
+        }
+
+        public IRestResponse<LoggedCompany> GetLoggedCompany()
+        {
+            return companiesEndpoint.GetLoggedCompany();
+        }
+
+        public IRestResponse<IdentityResult> AddCompany(AddCompanyArgument addCompanyArgument)
+        {
+            return companiesEndpoint.AddCompany(addCompanyArgument);
+        }
+
+        public IRestResponse<OneTimePassword> GetHotpForAuthUser(Guid userId)
+        {
+            return hotpsEndpoint.GetHotpForAuthUser(userId);
+        }
+
+        public IRestResponse<OtpValidationResult> ValidateHotpForAuthUser(Guid userId, string hotp)
+        {
+            return hotpsEndpoint.ValidateHotpForAuthUser(userId, hotp);
+        }
+
+        public IRestResponse<OneTimePassword> GetTotpForAuthUser(Guid userId)
+        {
+            return totpsEndpoint.GetTotpForAuthUser(userId);
+        }
+
+        public IRestResponse<OtpValidationResult> ValidateTotpForAuthUser(Guid userId, string totp)
+        {
+            return totpsEndpoint.ValidateTotpForAuthUser(userId, totp);
+        }
     }
 }
