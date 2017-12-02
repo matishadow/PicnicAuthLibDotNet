@@ -43,18 +43,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Endpoints\AuthorizedEndpoint.cs" />
     <Compile Include="Classes\Endpoints\AuthUsersEndpoint.cs" />
     <Compile Include="Classes\Endpoints\AuthUsersSecretsEndpoint.cs" />
     <Compile Include="Classes\Endpoints\CompaniesEndpoint.cs" />
     <Compile Include="Classes\Endpoints\HotpsEndpoint.cs" />
     <Compile Include="Classes\Endpoints\QrCodesEndpoint.cs" />
+    <Compile Include="Classes\Endpoints\RestEndpoint.cs" />
+    <Compile Include="Classes\Endpoints\TokensEndpoint.cs" />
     <Compile Include="Classes\Endpoints\TotpsEndpoint.cs" />
     <Compile Include="Classes\PicnicAuthClient.cs" />
+    <Compile Include="Models\AddAuthUserArgument.cs" />
+    <Compile Include="Models\AuthUser.cs" />
+    <Compile Include="Models\AuthUsersInCompany.cs" />
+    <Compile Include="Models\CreatedAuthUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Interfaces\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
