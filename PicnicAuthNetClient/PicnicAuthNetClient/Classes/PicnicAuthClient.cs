@@ -8,8 +8,10 @@ namespace PicnicAuthNetClient.Classes
     {
         private readonly Uri baseEndpoint;
         private readonly IRestClient restClient;
+
         private readonly AuthUsersEndpoint authUsersEndpoint;
         private readonly AuthUsersSecretsEndpoint authUsersSecretsEndpoint;
+        private readonly CompaniesEndpoint companiesEndpoint;
 
         public PicnicAuthClient(Uri baseEndpoint, string apiKey)
         {
@@ -18,21 +20,7 @@ namespace PicnicAuthNetClient.Classes
 
             authUsersEndpoint = new AuthUsersEndpoint(restClient, apiKey);
             authUsersSecretsEndpoint = new AuthUsersSecretsEndpoint(restClient, apiKey);
-        }
-
-        public IRestResponse AddCompany(string email, string userName, string password)
-        {
-            var request = new RestRequest("Companies", Method.POST);
-
-            request.AddJsonBody(new
-            {
-                Email = email,
-                UserName = userName,
-                Password = password,
-                ConfirmPassword = password
-            });
-
-            return restClient.Execute(request);
+            companiesEndpoint = new CompaniesEndpoint(restClient, apiKey);
         }
     }
 }
