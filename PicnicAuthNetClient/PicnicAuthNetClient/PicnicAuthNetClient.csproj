@@ -43,6 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Endpoints\AuthUsersEndpoint.cs" />
+    <Compile Include="Classes\Endpoints\AuthUsersSecretsEndpoint.cs" />
+    <Compile Include="Classes\Endpoints\CompaniesEndpoint.cs" />
+    <Compile Include="Classes\Endpoints\HotpsEndpoint.cs" />
+    <Compile Include="Classes\Endpoints\QrCodesEndpoint.cs" />
+    <Compile Include="Classes\Endpoints\TotpsEndpoint.cs" />
     <Compile Include="Classes\PicnicAuthClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

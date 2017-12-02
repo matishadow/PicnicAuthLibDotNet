@@ -1,4 +1,5 @@
 ﻿using System;
+using PicnicAuthNetClient.Classes.Endpoints;
 using RestSharp;
 
 namespace PicnicAuthNetClient.Classes
@@ -6,18 +7,15 @@ namespace PicnicAuthNetClient.Classes
     public class PicnicAuthClient
     {
         private readonly Uri baseEndpoint;
-        private readonly string apiKey;
         private readonly IRestClient restClient;
-
-        private const string AuthenticationHeaderName = "Authorization";
-        private const string AuthenticationHeaderValueFormat = "Bearer {0}";
-
+        private readonly AuthUsersEndpoint authUsersEndpoint;
 
         public PicnicAuthClient(Uri baseEndpoint, string apiKey)
         {
             this.baseEndpoint = baseEndpoint;
-            this.apiKey = apiKey;
             restClient = new RestClient(baseEndpoint);
+
+            authUsersEndpoint = new AuthUsersEndpoint(restClient, apiKey);
         }
 
         public IRestResponse AddCompany(string email, string userName, string password)
@@ -33,11 +31,6 @@ namespace PicnicAuthNetClient.Classes
             });
 
             return restClient.Execute(request);
-        }
-
-        private void AddAuthorizationHeader(IRestRequest request)
-        {
-            request?.AddHeader(AuthenticationHeaderName, string.Format(AuthenticationHeaderValueFormat, apiKey));
         }
     }
 }
