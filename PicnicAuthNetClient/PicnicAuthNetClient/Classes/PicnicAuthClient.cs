@@ -1,11 +1,12 @@
 ﻿using System;
 using PicnicAuthNetClient.Classes.Endpoints;
+using PicnicAuthNetClient.Interfaces;
 using PicnicAuthNetClient.Models;
 using RestSharp;
 
 namespace PicnicAuthNetClient.Classes
 {
-    public class PicnicAuthClient
+    public class PicnicAuthClient : IPicnicAuthClient
     {
         private readonly IRestClient restClient;
         private string apiKey;

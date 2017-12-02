@@ -51,6 +51,7 @@
     <Compile Include="Classes\Endpoints\RestEndpoint.cs" />
     <Compile Include="Classes\Endpoints\TokensEndpoint.cs" />
     <Compile Include="Classes\Endpoints\TotpsEndpoint.cs" />
+    <Compile Include="Interfaces\IPicnicAuthClient.cs" />
     <Compile Include="Classes\PicnicAuthClient.cs" />
     <Compile Include="Models\AddAuthUserArgument.cs" />
     <Compile Include="Models\AddCompanyArgument.cs" />
@@ -64,9 +65,7 @@
     <Compile Include="Models\TokenResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
