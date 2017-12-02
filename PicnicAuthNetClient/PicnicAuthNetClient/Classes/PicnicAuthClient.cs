@@ -12,6 +12,7 @@ namespace PicnicAuthNetClient.Classes
         private readonly AuthUsersEndpoint authUsersEndpoint;
         private readonly AuthUsersSecretsEndpoint authUsersSecretsEndpoint;
         private readonly CompaniesEndpoint companiesEndpoint;
+        private readonly HotpsEndpoint hotpsEndpoint;
 
         public PicnicAuthClient(Uri baseEndpoint, string apiKey)
         {
@@ -21,6 +22,7 @@ namespace PicnicAuthNetClient.Classes
             authUsersEndpoint = new AuthUsersEndpoint(restClient, apiKey);
             authUsersSecretsEndpoint = new AuthUsersSecretsEndpoint(restClient, apiKey);
             companiesEndpoint = new CompaniesEndpoint(restClient, apiKey);
+            hotpsEndpoint = new HotpsEndpoint(restClient, apiKey);
         }
     }
 }
