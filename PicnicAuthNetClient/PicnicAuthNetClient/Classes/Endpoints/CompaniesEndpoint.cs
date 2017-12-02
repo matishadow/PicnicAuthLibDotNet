@@ -20,7 +20,6 @@ namespace PicnicAuthNetClient.Classes.Endpoints
         public IRestResponse<IdentityResult> AddCompany(AddCompanyArgument addCompanyArgument)
         {
             var request = new RestRequest("Companies", Method.POST);
-            AddAuthorizationHeader(request, ApiKey);
 
             request.AddJsonBody(addCompanyArgument);
 

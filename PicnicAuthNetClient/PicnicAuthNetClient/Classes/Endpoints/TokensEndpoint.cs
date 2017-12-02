@@ -15,11 +15,11 @@ namespace PicnicAuthNetClient.Classes.Endpoints
 
         public IRestResponse<TokenResponse> GetApiKey(string username, string password)
         {
-            var request = new RestRequest("Companies/Me/AuthUsers", Method.POST);
+            var request = new RestRequest("tokens", Method.POST);
 
-            request.AddQueryParameter(nameof(grant_type), grant_type);
-            request.AddQueryParameter(nameof(username), username);
-            request.AddQueryParameter(nameof(password), password);
+            request.AddParameter(nameof(grant_type), grant_type);
+            request.AddParameter(nameof(username), username);
+            request.AddParameter(nameof(password), password);
 
             return restClient.Execute<TokenResponse>(request);
         }
